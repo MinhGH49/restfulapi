@@ -3,7 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-
+const cors = require('cors');
 var bodyParser = require('body-parser')
 var jsonParser = bodyParser.json();
 var urlencodedParser = bodyParser.urlencoded({ extended: true })
@@ -19,6 +19,8 @@ var drugsInsertRouter = require('./routes/drugs/insert')
 var drugsViewRouter = require('./routes/drugs/view')
 
 var app = express();
+
+app.use(cors());
 
 mongoose.connect('mongodb+srv://minh-connect-2:1331minh@cluster-m.lzcr9pg.mongodb.net/?retryWrites=true&w=majority',
   {
