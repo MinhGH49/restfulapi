@@ -5,8 +5,8 @@ let drugSchema = new mongoose.Schema({
   id: {
     type: String,
     required: true,
-    unique: true,
-    uppercase: true
+    // unique: true,
+    // // uppercase: true
   },
   name: String,
   prescribe: String,

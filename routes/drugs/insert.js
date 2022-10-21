@@ -1,10 +1,11 @@
 var express = require('express');
-var bodyParser = require('body-parser');
 var router = express.Router();
 var mongoose = require('mongoose');
 var Drug = require('../../models/drug');
 
 router.post('/', (req,res) => {
+  console.log(req.body);
+
   var newDrug = new Drug({
     id: req.body.id,
     name: req.body.name,
